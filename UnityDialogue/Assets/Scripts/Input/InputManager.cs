@@ -8,8 +8,15 @@ public class InputManager : MonoBehaviour {
 
     public static Vector3 Get_MovementInput { get { return movementInput; } }
 
+    private bool key_e;
+    public bool Get_KeyE { get { return key_e; } }
+
+    private KeyCode keyE = KeyCode.E;
+
     private void Update()
     {
         movementInput = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"),0);
+
+        key_e = Input.GetKeyDown(keyE);
     }
 }
