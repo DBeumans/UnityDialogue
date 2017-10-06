@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1841,6 +1841,7 @@ GameObject:
   - component: {fileID: 1816024203}
   - component: {fileID: 1816024201}
   - component: {fileID: 1816024202}
+  - component: {fileID: 1816024207}
   m_Layer: 0
   m_Name: Npc
   m_TagString: Untagged
@@ -1871,10 +1872,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816024200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85e4798f0001cb5488b35158a5c89eb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2741e070c523cbd4d87c95d1643c1b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: test
+  npcName: Test
 --- !u!23 &1816024203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1939,3 +1940,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1816024207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1816024200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd03a7f39f84fd44a51c400cfe68b4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

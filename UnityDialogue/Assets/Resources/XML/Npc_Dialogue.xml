@@ -1,5 +1,11 @@
-<npc>
-  
-  
-  
-</npc>
+<npc_root>
+
+  <npc name="npc_01">
+    <message>ahah</message>
+  </npc>
+
+  <npc name="npc_02">
+    <message>haah</message>
+  </npc>
+
+</npc_root>

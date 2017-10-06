@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour {
+public abstract class NPC : MonoBehaviour {
 
     [SerializeField]
     protected string npcName;
@@ -13,11 +13,17 @@ public class NPC : MonoBehaviour {
 
     protected bool isInConversation;
 
+    protected NPCLoadDialogueText NPCDialogueTextLoader;
+
     protected void Start()
     {
+        NPCDialogueTextLoader = GetComponent<NPCLoadDialogueText>();
+
         player = GameObject.FindGameObjectWithTag("Player");
 
         ui = GameObject.FindObjectOfType<ToggleUI>();
+
+        NPCDialogueTextLoader.loadDialogueText(LoadXML.LoadLocalFile("XML/npc_dialogue"));
     }
 
     protected void Update()

@@ -18,7 +18,6 @@ public static class LoadXML {
         try
         {
             document.LoadXml(resourceFile.text);
-            Debug.Log(document);
             return document;
         }
         catch(Exception exception)
