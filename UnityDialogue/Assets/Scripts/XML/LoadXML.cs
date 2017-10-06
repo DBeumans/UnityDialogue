@@ -11,13 +11,14 @@ public static class LoadXML {
     {
         XmlDocument document = new XmlDocument();
         TextAsset resourceFile = Resources.Load(filePath) as TextAsset;
-
+        
         if (!resourceFile)
             throw new XmlException("Failed to load file.");
 
         try
         {
             document.LoadXml(resourceFile.text);
+            Debug.Log(document);
             return document;
         }
         catch(Exception exception)

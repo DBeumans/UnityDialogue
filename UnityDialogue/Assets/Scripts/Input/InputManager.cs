@@ -8,8 +8,8 @@ public class InputManager : MonoBehaviour {
 
     public static Vector3 Get_MovementInput { get { return movementInput; } }
 
-    private bool key_e;
-    public bool Get_KeyE { get { return key_e; } }
+    private static bool key_e;
+    public static bool Get_KeyE { get { return key_e; } }
 
     private KeyCode keyE = KeyCode.E;
 
