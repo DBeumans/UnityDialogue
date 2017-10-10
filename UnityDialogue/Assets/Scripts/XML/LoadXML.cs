@@ -23,7 +23,6 @@ public static class LoadXML {
         catch(Exception exception)
         {
             throw new Exception("Failed to load xml file. " + exception);
-            return null;
         }
     }
     
