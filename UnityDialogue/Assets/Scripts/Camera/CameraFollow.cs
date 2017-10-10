@@ -9,23 +9,36 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField]
     private Vector3 cameraOffset;
 
+    [SerializeField]
+    private float rotationSpeed;
+
+    private bool enableUpdate;
+
+    private float horizontal;
+    private float vertical;
+
     private void Start()
     {
         cameraTarget = GameObject.FindGameObjectWithTag(TagList.Player);
+
+        cameraOffset = cameraTarget.transform.position - transform.position;
+
+        enableUpdate = true;
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        calculate();
-    }
+        if (!enableUpdate)
+            return;
 
-    private void calculate()
-    {
-        Vector3 desiredRotation;
-    }
+        horizontal = InputManager.Get_MouseInputX * rotationSpeed;
+        cameraTarget.transform.Rotate(0, horizontal, 0);
 
-    private void perform()
-    {
+        float desiredAngle = cameraTarget.transform.eulerAngles.y;
+        Quaternion rotation = Quaternion.Euler(0, desiredAngle, 0);
+        transform.position = cameraTarget.transform.position - (rotation * cameraOffset);
+
+        transform.LookAt(cameraTarget.transform);
 
     }
 }

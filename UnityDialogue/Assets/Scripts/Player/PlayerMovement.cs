@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody rigid;
 
-    private Vector3 movement;
-    private Vector3 rotation;
+    private Vector3 movementVertical;
+    private Vector3 movementHorizontal;
 
     private void Start()
     {
@@ -26,29 +26,29 @@ public class PlayerMovement : MonoBehaviour {
         float vertical = InputManager.Get_MovementInput.y;
         
         Vector3 movement_vertical = transform.forward * vertical;
-        Vector3 rotation_horizontal = transform.up * horizontal;
+        Vector3 movement_horizontal = transform.right * horizontal;
 
-        movement = movement_vertical;
-        rotation = rotation_horizontal;
+        movementVertical = movement_vertical;
+        movementHorizontal = movement_horizontal;
 
     }
 
     private void FixedUpdate()
     {
-        rotationCalculation();
-        movementCalculation();
+        horizontalMovement();
+        verticalMovement();
     }
 
-    private void movementCalculation()
+    private void verticalMovement()
     {
-        movement = movement * movementSpeed * Time.fixedDeltaTime;
-        rigid.MovePosition(rigid.position + movement);
+        movementVertical = movementVertical * movementSpeed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + movementVertical);
     }
 
-    private void rotationCalculation()
+    private void horizontalMovement()
     {
-        rotation = rotation * rotationSpeed * Time.fixedDeltaTime;
-        rigid.MoveRotation(rigid.rotation * Quaternion.Euler(rotation));
+        movementHorizontal = movementHorizontal * movementSpeed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + movementHorizontal);
         
     }
 }

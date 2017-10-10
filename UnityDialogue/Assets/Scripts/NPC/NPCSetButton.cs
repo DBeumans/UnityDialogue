@@ -5,25 +5,18 @@ using UnityEngine.UI;
 
 public class NPCSetButton : MonoBehaviour {
 
-    private NPC npc;
-
     [SerializeField]
     private List<Button> buttons = new List<Button>();
     private List<Text> buttonsText = new List<Text>();
 
-    private NPCLoadDialogueText npcDialogueText;
 
     private void Start()
     {
-        npc = GetComponent<NPC>();
-        npcDialogueText = GetComponent<NPCLoadDialogueText>();
-
         for (int i = 0; i < buttons.Count; i++)
         {
             buttonsText.Add(buttons[i].GetComponentInChildren<Text>());
             buttons[i].gameObject.SetActive(false);
-        }
-        
+        }       
     }
 
     public void disableButtons()
