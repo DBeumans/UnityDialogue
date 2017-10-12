@@ -923,12 +923,12 @@ GameObject:
   - component: {fileID: 841679059}
   - component: {fileID: 841679058}
   - component: {fileID: 841679057}
-  - component: {fileID: 841679056}
   - component: {fileID: 841679055}
   - component: {fileID: 841679054}
   - component: {fileID: 841679053}
   - component: {fileID: 841679052}
   - component: {fileID: 841679051}
+  - component: {fileID: 841679056}
   m_Layer: 0
   m_Name: npc_02
   m_TagString: Untagged
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 841679050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2741e070c523cbd4d87c95d1643c1b37, type: 3}
+  m_Script: {fileID: 11500000, guid: 93549823294966d4d8c3612df00268cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   npcName: npc_02
@@ -1605,6 +1605,7 @@ GameObject:
   - component: {fileID: 1312302874}
   - component: {fileID: 1312302873}
   - component: {fileID: 1312302878}
+  - component: {fileID: 1312302879}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1704,6 +1705,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1312302879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1312302872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a949bf6418f011d4fb81a643db4e5401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1432457123
 GameObject:
   m_ObjectHideFlags: 0

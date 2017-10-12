@@ -11,7 +11,6 @@ public abstract class NPC : MonoBehaviour {
 
     protected ToggleUI ui;
 
-    protected bool isInConversation;
     protected bool enableUpdate;
     
     protected float max_interactionRange;
@@ -24,6 +23,7 @@ public abstract class NPC : MonoBehaviour {
     protected NPCLoadDialogueText NPCDialogueTextLoader;
     protected NPCShowDialogueText npcShowDialogueText;
     protected NPCLookAtObject npcLookAtObject;
+    protected PlayerData playerData;
 
     protected void Start()
     {
@@ -39,6 +39,7 @@ public abstract class NPC : MonoBehaviour {
         NPCDialogueTextLoader = GetComponent<NPCLoadDialogueText>();
         npcShowDialogueText = GetComponent<NPCShowDialogueText>();
         npcLookAtObject = GetComponent<NPCLookAtObject>();
+        playerData = FindObjectOfType<PlayerData>();
 
         rigid = GetComponent<Rigidbody>();
 
@@ -71,10 +72,10 @@ public abstract class NPC : MonoBehaviour {
         {
             ui.ToggleInteractionText("");
             ui.ToggleDialogueWindow(false);
-            isInConversation = false;
+            playerData.IsInConversation = false;
             return;
         }
-        if (isInConversation)
+        if (playerData.IsInConversation)
             return;
 
         ui.ToggleInteractionText("Press E to chat with " + npcName);
@@ -88,11 +89,12 @@ public abstract class NPC : MonoBehaviour {
         if (!InputManager.Get_KeyE)
             return;
 
-        isInConversation = true;
+        playerData.IsInConversation = true;
 
         ui.ToggleInteractionText("");
         ui.ToggleDialogueWindow(true);
         npcShowDialogueText.showMessage(0);   
+        CursorLockState.ToggleCursorLockState(CursorLockMode.None);
     }
 
 }

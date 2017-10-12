@@ -17,8 +17,12 @@ public class CameraFollow : MonoBehaviour {
     private float horizontal;
     private float vertical;
 
+    private PlayerData playerData;
+
     private void Start()
     {
+        playerData = FindObjectOfType<PlayerData>();
+
         cameraTarget = GameObject.FindGameObjectWithTag(TagList.Player);
 
         cameraOffset = cameraTarget.transform.position - transform.position;
@@ -29,6 +33,9 @@ public class CameraFollow : MonoBehaviour {
     void Update()
     {
         if (!enableUpdate)
+            return;
+
+        if (playerData.IsInConversation)
             return;
 
         horizontal = InputManager.Get_MouseInputX * rotationSpeed;
