@@ -15,13 +15,19 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 movementVertical;
     private Vector3 movementHorizontal;
 
+    private CursorLockCheck cursorLockCheck;
+
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        cursorLockCheck = FindObjectOfType<CursorLockCheck>();
     }
 
     private void Update()
     {
+        if (cursorLockCheck.Get_CursorActiveState)
+            return;
+
         float horizontal = InputManager.Get_MovementInput.x;
         float vertical = InputManager.Get_MovementInput.y;
         

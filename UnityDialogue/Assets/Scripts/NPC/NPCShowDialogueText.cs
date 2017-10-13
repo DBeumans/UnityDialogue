@@ -38,7 +38,7 @@ public class NPCShowDialogueText : MonoBehaviour {
             Button optionButton = NPCButton.SetButtonText(optionsList[i].Option);
 
             if (response < 0)
-                optionButton.onClick.AddListener(delegate () { ui.ToggleDialogueWindow(false); playerData.IsInConversation = false; CursorLockState.ToggleCursorLockState(CursorLockMode.Locked); Debug.Log("test"); });
+                optionButton.onClick.AddListener(delegate () { ui.ToggleDialogueWindow(false);});
             else
                 optionButton.onClick.AddListener(delegate () { this.showMessage(response); });
         }

@@ -94,7 +94,6 @@ public abstract class NPC : MonoBehaviour {
         ui.ToggleInteractionText("");
         ui.ToggleDialogueWindow(true);
         npcShowDialogueText.showMessage(0);   
-        CursorLockState.ToggleCursorLockState(CursorLockMode.None);
     }
 
 }

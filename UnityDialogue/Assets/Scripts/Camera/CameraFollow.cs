@@ -17,11 +17,11 @@ public class CameraFollow : MonoBehaviour {
     private float horizontal;
     private float vertical;
 
-    private PlayerData playerData;
+    private CursorLockCheck cursorLockCheck;
 
     private void Start()
     {
-        playerData = FindObjectOfType<PlayerData>();
+        cursorLockCheck = FindObjectOfType<CursorLockCheck>();
 
         cameraTarget = GameObject.FindGameObjectWithTag(TagList.Player);
 
@@ -35,7 +35,7 @@ public class CameraFollow : MonoBehaviour {
         if (!enableUpdate)
             return;
 
-        if (playerData.IsInConversation)
+        if (cursorLockCheck.Get_CursorActiveState)
             return;
 
         horizontal = InputManager.Get_MouseInputX * rotationSpeed;

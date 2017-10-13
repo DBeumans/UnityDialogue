@@ -11,8 +11,5 @@ public class PlayerData : MonoBehaviour {
         set { isInConversation = value; }
     }
 
-    private void Start()
-    {
-        CursorLockState.ToggleCursorLockState(CursorLockMode.Locked);
-    }
+
 }

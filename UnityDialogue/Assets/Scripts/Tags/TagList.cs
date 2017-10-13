@@ -6,5 +6,6 @@ public class TagList {
 
     public const string Player = "Player";
     public const string Button = "Button";
+    public const string DialoguePanel = "DialoguePanel";
 
 }
