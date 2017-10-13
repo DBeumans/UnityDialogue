@@ -16,7 +16,11 @@ public class InputManager : MonoBehaviour {
     private static bool key_e;
     public static bool Get_KeyE { get { return key_e; } }
 
+    private static bool key_escape;
+    public static bool Get_KeyEscape { get { return key_escape; } }
+
     private KeyCode keyE = KeyCode.E;
+    private KeyCode keyEscape = KeyCode.Escape;
 
     private void Update()
     {
@@ -25,5 +29,6 @@ public class InputManager : MonoBehaviour {
         mouseInputY = Input.GetAxis("Mouse Y");
 
         key_e = Input.GetKeyDown(keyE);
+        key_escape = Input.GetKeyDown(keyEscape);
     }
 }

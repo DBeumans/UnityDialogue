@@ -11,6 +11,10 @@ public class ToggleUI : MonoBehaviour {
     [SerializeField]
     private GameObject dialogueWindow;
 
+    [SerializeField]
+    private GameObject pausePanel;
+    public GameObject Get_PausePanel { get { return pausePanel; } }
+
     public void ToggleInteractionText(string text)
     {
         interactionText.text = text;
@@ -19,5 +23,10 @@ public class ToggleUI : MonoBehaviour {
     public void ToggleDialogueWindow(bool value)
     {
         dialogueWindow.SetActive(value);
+    }
+
+    public void TogglePauseWindow(bool value)
+    {
+        pausePanel.SetActive(value);
     }
 }

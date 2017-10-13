@@ -18,10 +18,12 @@ public class CameraFollow : MonoBehaviour {
     private float vertical;
 
     private CursorLockCheck cursorLockCheck;
+    private PauseBehaviour pauseBehaviour;
 
     private void Start()
     {
         cursorLockCheck = FindObjectOfType<CursorLockCheck>();
+        pauseBehaviour = FindObjectOfType<PauseBehaviour>();
 
         cameraTarget = GameObject.FindGameObjectWithTag(TagList.Player);
 
@@ -36,6 +38,9 @@ public class CameraFollow : MonoBehaviour {
             return;
 
         if (cursorLockCheck.Get_CursorActiveState)
+            return;
+
+        if (pauseBehaviour.Get_IsPaused)
             return;
 
         horizontal = InputManager.Get_MouseInputX * rotationSpeed;

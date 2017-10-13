@@ -1,20 +1,21 @@
 <npc_root>
 
   <npc name="npc_01">
-    <message msgID="0">ahah</message>
-	<option forMsgID="0" response="1">Hi!</option>
-	<option forMsgID="0" response="0">Hi2!</option>
-	
-	<message msgID="1">ahahddd</message>
+    <message msgID="0">Hey there stranger!</message>
+	<option forMsgID="0" response="1">Hello ?</option>
+	<option forMsgID="0" response="-1">Bye!</option>
+
+	<message msgID="1">o</message>
 	<option forMsgID="1" response="-1">Hi!dddd</option>
-    <option forMsgID="1" response="0">Hi3!</option>
+    <option forMsgID="1" response="0">back</option>
   </npc>
 
   <npc name="npc_02">
-    <message msgID="0">ahahaaa</message>
-	<option forMsgID="0" response="1">Hi!</option>
-	
-	<message msgID="1">ahahaaaaaaaaaaa</message>
+    <message msgID="0">Can i help you ?</message>
+	<option forMsgID="0" response="1">Who are you ?</option>
+	<option forMsgID="0" response="-1">Bye</option>
+    
+	  <message msgID="1">o</message>
 	<option forMsgID="1" response="-1">Hi!aaa</option>
   </npc>
 

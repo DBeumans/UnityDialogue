@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CursorLockCheck : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject dialogueUI;
-
     private bool cursorActive;
     public bool Get_CursorActiveState { get { return cursorActive; } }
 
@@ -17,15 +14,17 @@ public class CursorLockCheck : MonoBehaviour {
 
     private void Update()
     {
-        if(dialogueUI.activeInHierarchy)
+        if (CursorLockState.GetCursorLockState() == CursorLockMode.Locked)
+        {
+            CursorLockState.ToggleCursorLockState(CursorLockMode.Locked);
+            cursorActive = false;
+            return;
+        }
+        else
         {
             CursorLockState.ToggleCursorLockState(CursorLockMode.None);
             cursorActive = true;
             return;
         }
-
-        CursorLockState.ToggleCursorLockState(CursorLockMode.Locked);
-        cursorActive = false;
-
     }
 }

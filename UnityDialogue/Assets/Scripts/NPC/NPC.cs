@@ -61,6 +61,7 @@ public abstract class NPC : MonoBehaviour {
     {
         if (!enableUpdate)
             return;
+
         // This line fixed a wierd bug that for some reason fixes that the player is able to talk with other npcs.
         if (!CheckRange.CheckRangeBetweenObjects(this.gameObject.transform, player.gameObject.transform, max_interactionRange * 2))
         {

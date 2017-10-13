@@ -16,16 +16,20 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 movementHorizontal;
 
     private CursorLockCheck cursorLockCheck;
+    private PauseBehaviour pauseBehaviour;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
         cursorLockCheck = FindObjectOfType<CursorLockCheck>();
+        pauseBehaviour = FindObjectOfType<PauseBehaviour>();
     }
 
     private void Update()
     {
         if (cursorLockCheck.Get_CursorActiveState)
+            return;
+        if (pauseBehaviour.Get_IsPaused)
             return;
 
         float horizontal = InputManager.Get_MovementInput.x;

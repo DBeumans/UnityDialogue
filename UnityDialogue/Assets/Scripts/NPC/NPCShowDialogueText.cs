@@ -12,13 +12,11 @@ public class NPCShowDialogueText : MonoBehaviour {
     private NPCSetButton NPCButton;
 
     private ToggleUI ui;
-    private PlayerData playerData;
 
     private void Start()
     {
         npcDialogueText = GetComponent<NPCLoadDialogueText>();
         NPCButton = GetComponent<NPCSetButton>();
-        playerData = FindObjectOfType<PlayerData>();
 
         ui = FindObjectOfType<ToggleUI>();
 
@@ -38,10 +36,11 @@ public class NPCShowDialogueText : MonoBehaviour {
             Button optionButton = NPCButton.SetButtonText(optionsList[i].Option);
 
             if (response < 0)
-                optionButton.onClick.AddListener(delegate () { ui.ToggleDialogueWindow(false);});
+                optionButton.onClick.AddListener(delegate () { ui.ToggleDialogueWindow(false); CursorLockState.ToggleCursorLockState(CursorLockMode.Locked); });
             else
                 optionButton.onClick.AddListener(delegate () { this.showMessage(response); });
         }
         ui.ToggleDialogueWindow(true);
+        CursorLockState.ToggleCursorLockState(CursorLockMode.None);
     }
 }
