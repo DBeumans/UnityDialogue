@@ -32,13 +32,9 @@ public class PauseBehaviour : MonoBehaviour {
             CursorLockState.ToggleCursorLockState(CursorLockMode.Locked);
             return;
         }
-        else
-        {
-            toggleUI.TogglePauseWindow(true);
-            isPaused = true;
-            CursorLockState.ToggleCursorLockState(CursorLockMode.None);
-            return;
-        }
-
+        toggleUI.TogglePauseWindow(true);
+        isPaused = true;
+        CursorLockState.ToggleCursorLockState(CursorLockMode.None);
+        CursorViewState.SetCursorTexture(CursorViewState.Get_Normal);
     }
 }

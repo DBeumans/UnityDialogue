@@ -72,7 +72,6 @@ public abstract class NPC : MonoBehaviour {
         if (!CheckRange.CheckRangeBetweenObjects(this.gameObject.transform, player.gameObject.transform, max_interactionRange))
         {
             ui.ToggleInteractionText("");
-            ui.ToggleDialogueWindow(false);
             playerData.IsInConversation = false;
             return;
         }
@@ -91,10 +90,10 @@ public abstract class NPC : MonoBehaviour {
             return;
 
         playerData.IsInConversation = true;
-
+        CursorLockState.ToggleCursorLockState(CursorLockMode.None);
         ui.ToggleInteractionText("");
-        ui.ToggleDialogueWindow(true);
-        npcShowDialogueText.showMessage(0);   
+        npcShowDialogueText.showMessage(0);
+
     }
 
 }

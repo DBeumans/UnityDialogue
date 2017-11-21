@@ -5,18 +5,19 @@
 	<option forMsgID="0" response="1">Hello ?</option>
 	<option forMsgID="0" response="-1">Bye!</option>
 
-	<message msgID="1">o</message>
-	<option forMsgID="1" response="-1">Hi!dddd</option>
+	<message msgID="1">I dont know what to say.</message>
+	<option forMsgID="1" response="-1">Ok.</option>
     <option forMsgID="1" response="0">back</option>
   </npc>
 
   <npc name="npc_02">
     <message msgID="0">Can i help you ?</message>
 	<option forMsgID="0" response="1">Who are you ?</option>
-	<option forMsgID="0" response="-1">Bye</option>
+	<option forMsgID="0" response="-1">Bye.</option>
     
-	  <message msgID="1">o</message>
-	<option forMsgID="1" response="-1">Hi!aaa</option>
+	  <message msgID="1">Who am i ?</message>
+	<option forMsgID="1" response="-1">Huh ?</option>
+  <option forMsgID="1" response="0">back</option>
   </npc>
 
 </npc_root>

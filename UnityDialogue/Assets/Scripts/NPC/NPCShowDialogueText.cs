@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class NPCShowDialogueText : MonoBehaviour {
 
@@ -32,15 +33,23 @@ public class NPCShowDialogueText : MonoBehaviour {
 
         for (int i = 0; i < optionsList.Count; i++)
         {
-            var response = optionsList[i].Response;
+            var count = i;
+            var response = optionsList[count].Response;
             Button optionButton = NPCButton.SetButtonText(optionsList[i].Option);
 
             if (response < 0)
-                optionButton.onClick.AddListener(delegate () { ui.ToggleDialogueWindow(false); CursorLockState.ToggleCursorLockState(CursorLockMode.Locked); });
+                optionButton.onClick.AddListener(delegate () { closeConversation(); });
+                
             else
-                optionButton.onClick.AddListener(delegate () { this.showMessage(response); });
+                optionButton.onClick.AddListener(delegate () { this.showMessage(response); });                
+     
         }
         ui.ToggleDialogueWindow(true);
-        CursorLockState.ToggleCursorLockState(CursorLockMode.None);
+        
+    }
+
+    private void closeConversation()
+    {
+        ui.ToggleDialogueWindow(false);
     }
 }
